@@ -66,7 +66,7 @@ input:focus, textarea:focus, select:focus, button:hover, .button:hover { backgro
 
 @media only screen and (max-width:750px) {
 	body, .flex {flex-direction:column;}
-	.fullw, .halfw, .thirdw, .quarterw, .fithw, .eigthw {width:calc(100% - 2.5rem);height:auto;}
+	.full, .half, .third, .quarter, .fith, .eigth {width:calc(100% - 2.5rem);height:auto;}
 	.end, .center, .start {align-self:stretch;}
 }
 
