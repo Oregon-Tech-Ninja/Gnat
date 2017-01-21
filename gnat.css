@@ -1,6 +1,7 @@
 /*
 * Gnat: Minimal flexbox framework.
-* Sets the base style and then provides tools for layout.
+* Assuming you have a good working knowledge of css, the fastest way to learn gnat is
+* to read this file all the way through.
 */
 /* Style */
 
@@ -31,13 +32,18 @@ input:focus, textarea:focus, select:focus, button:hover, .button:hover { backgro
 
 /* Layout */
 
-.pad, .flex { padding:1.25rem; }
-.flex { justify-content:space-around;display:flex;flex-wrap:wrap; }
-.col { flex-direction:column; }
+/* Margin & Padding */
+.pad { padding:1.25rem; }
 .mrg { margin:1.25rem; }
 .auto { margin:auto; }
 .fill { margin:-1.25rem; }
 
+/* Flex Container */
+.flex { justify-content:space-around;display:flex;flex-wrap:wrap; }
+.col { flex-direction:column; }
+
+/* Flex Item */
+/* flex-grow */
 .one {flex-grow:1;}
 .two {flex-grow:2;}
 .three {flex-grow:3;}
@@ -46,24 +52,23 @@ input:focus, textarea:focus, select:focus, button:hover, .button:hover { backgro
 .six {flex-grow:6;}
 .seven {flex-grow:7}
 .eight {flex-grow:8}
-.nine {flex-grow:9}
-.ten {flex-grow:10}
-.eleven {flex-grow:11}
-.twelve {flex-grow:12}
 
-.full {width:calc(100% - 3rem);}
-.half {width:calc(50% - 3rem);}
-.third {width:calc(33.33% - 3rem);}
-.quarter {width:calc(25% - 3rem);}
-.fith {width:calc(20% - 3rem);}
-.sixth {width:calc(20% - 3rem);}
-.seventh {width:calc(20% - 3rem);}
-.eighth {width:calc(12.5% - 3rem);}
+/* width */
+.full {width:calc(100% - 2.5rem);}
+.half {width:calc(50% - 2.5rem);}
+.third {width:calc(33.33% - 2.5rem);}
+.quarter {width:calc(25% - 2.5rem);}
+.fith {width:calc(20% - 2.5rem);}
+.sixth {width:calc(20% - 2.5rem);}
+.seventh {width:calc(20% - 2.5rem);}
+.eighth {width:calc(12.5% - 2.5rem);}
 
+/* align-self */
 .start {align-self:flex-start;}
 .center {align-self:center;}
 .end {align-self:flex-end;}
 
+/* Adjust to columns for smaller screen */
 @media only screen and (max-width:750px) {
 	body, .flex {flex-direction:column;}
 	.full, .half, .third, .quarter, .fith, .eigth {width:calc(100% - 2.5rem);height:auto;}
