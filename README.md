@@ -1,22 +1,61 @@
 # Gnat
+
 Crazy small css flex framework.
 
 ## Small, Kind, and Malleable
-Gnat was made to handle responsive flex based layouts in a simple and flexible manner which plays well with your own stylesheet. Thanks to CSS's rem unit, Gnat's padding and margins are easily customized by setting the "font-size" on the "html" element. 
 
-Gnat assumes you prototype your layout, and then lay your styling on top of it. If you don't like the silouhette of something, there's no point in dressing it up. 
+Gnat was made to handle responsive flex based layouts in a simple and flexible manner which plays well with your own stylesheet. Thanks to CSS's rem unit, Gnat's padding and margins are easily customized by setting the "font-size" on the "html" element.
 
-*By default 1rem = 10px.*
+Gnat assumes you prototype your layout, and then lay your styling on top of it. If you don't like the silouhette of something, there's no point in dressing it up.
 
-The API is as follows:
+By default 1rem = 10px.
+
+## Style
 ```
-.pad, .flex { padding:1.25rem; }
-.flex { justify-content:space-around;display:flex; }
-.col { flex-direction:column; }
+html {font-size:10px;}
+
+html, body, div, form { box-sizing:border-box;padding:0;margin:0; }
+html, body { width:100%;max-width:100%; }
+
+body { font-size:2rem;overflow-y:scroll;display:flex;flex-direction:column; }
+
+p { font-size:2em; }
+h1 { font-size:3em; }
+h2 { font-size:2.8em; }
+h3 { font-size:2.6em; }
+h4 { font-size:2.4em; }
+
+button, .button, input, textarea, select {
+	border-radius:2px;
+	font-size:2em;
+	background:#CCC;
+	border:0.1rem solid #999;
+	resize:none;
+	margin:0.3rem;
+}
+
+input:focus, textarea:focus, select:focus, button:hover, .button:hover { background:#fff; }
+```
+
+## Layout
+
+### Margin & Padding
+```
+.pad { padding:1.25rem; }
 .mrg { margin:1.25rem; }
 .auto { margin:auto; }
 .fill { margin:-1.25rem; }
+```
 
+### Flex Container
+```
+.flex { justify-content:space-around;display:flex;flex-wrap:wrap; }
+.col { flex-direction:column; }
+```
+
+### Flex Item
+#### flex-grow
+```
 .one {flex-grow:1;}
 .two {flex-grow:2;}
 .three {flex-grow:3;}
@@ -25,28 +64,30 @@ The API is as follows:
 .six {flex-grow:6;}
 .seven {flex-grow:7}
 .eight {flex-grow:8}
-.nine {flex-grow:9}
-.ten {flex-grow:10}
-.eleven {flex-grow:11}
-.twelve {flex-grow:12}
-
-.full {width:calc(100% - 1.25rem);}
-.half {width:calc(50% - 1.25rem);}
-.third {width:calc(33.33% - 1.25rem);}
-.quarter {width:calc(25% - 1.25rem);}
-.fith {width:calc(20% - 1.25rem);}
-.sixth {width:calc(20% - 1.25rem);}
-.seventh {width:calc(20% - 1.25rem);}
-.eighth {width:calc(12.5% - 1.25rem);}
-
+```
+#### width
+```
+.full {width:calc(100% - 2.5rem);}
+.half {width:calc(50% - 2.5rem);}
+.third {width:calc(33.33% - 2.5rem);}
+.quarter {width:calc(25% - 2.5rem);}
+.fith {width:calc(20% - 2.5rem);}
+.sixth {width:calc(20% - 2.5rem);}
+.seventh {width:calc(20% - 2.5rem);}
+.eighth {width:calc(12.5% - 2.5rem);}
+```
+#### align-self
+```
 .start {align-self:flex-start;}
 .center {align-self:center;}
 .end {align-self:flex-end;}
+```
 
+## Adjust to columns for smaller screen
+```
 @media only screen and (max-width:750px) {
 	body, .flex {flex-direction:column;}
-	.full, .half, .third, .quarter, .fith, .eigth {width:calc(100% - 1.5rem);height:auto;}
+	.full, .half, .third, .quarter, .fith, .eigth {width:calc(100% - 2.5rem);height:auto;}
 	.end, .center, .start {align-self:stretch;}
 }
 ```
-
